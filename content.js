@@ -11,7 +11,7 @@ shadow.innerHTML = `<style>
 document.documentElement.appendChild(host);
 const tip = shadow.getElementById('t');
 
-// Step 6: small colour name list [name, r, g, b]
+// small colour name list [name, r, g, b]
 const NAMES = [
   ['Black',0,0,0],['White',255,255,255],['Grey',128,128,128],['Light grey',200,200,200],
   ['Dark grey',64,64,64],['Red',220,30,40],['Dark red',139,0,0],['Maroon',128,0,32],
@@ -35,7 +35,7 @@ function nearestName(rgb) {
   return best;
 }
 
-// Step 7: WCAG contrast ratio
+// WCAG contrast ratio
 function luminance([r, g, b]) {
   const f = v => { v /= 255; return v <= 0.03928 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4; };
   return 0.2126 * f(r) + 0.7152 * f(g) + 0.0722 * f(b);
